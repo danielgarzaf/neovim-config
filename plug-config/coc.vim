@@ -28,7 +28,7 @@ else
     set signcolumn=yes
 endif
 
-" Use tab for trigger copletion with characters ahead and navigate.
+" Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
 inoremap <silent><expr> <TAB>
@@ -73,7 +73,7 @@ function! s:show_documentation()
     endif
 endfunction
 
-" Hihglight the symbol and its references when holding the cursor
+" Highlight the symbol and its references when holding the cursor
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Symbol renaming.
