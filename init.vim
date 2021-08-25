@@ -3,6 +3,8 @@ source $HOME/.config/nvim/vim-plug/plugins.vim
 source $HOME/.config/nvim/colors/color-scheme.vim
 source $HOME/.config/nvim/keys/mappings.vim
 source $HOME/.config/nvim/plug-config/coc.vim
+source $HOME/.config/nvim/treesitter/ts.vim
+
 lua << EOF
 require'lspconfig'.groovyls.setup{
     -- Unix

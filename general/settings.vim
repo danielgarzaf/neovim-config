@@ -26,5 +26,6 @@ set cmdheight=2
 set updatetime=50
 set shortmess+=c
 set termguicolors
+set statusline+=%F
 
 au! BufWritePost $MYVIMRC source %

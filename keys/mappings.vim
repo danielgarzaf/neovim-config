@@ -10,6 +10,11 @@ nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>vs :vsplit <CR> 
 nnoremap <leader>s :split<CR>
 
+" Resizing windows
+nnoremap <leader>+ :vertical resize +5<CR>
+nnoremap <leader>- :vertical resize -5<CR>
+nnoremap <leader>rp :resize 100<CR>
+
 " Better tabbing
 vnoremap < <gv
 vnoremap > >gv
@@ -34,11 +39,6 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 nnoremap J mzJ`z
 
-inoremap , ,<c-g>u
-inoremap . .<c-g>u
-inoremap ! !<c-g>u
-inoremap ? ?<c-g>u
-
 nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
 nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
 
@@ -48,3 +48,6 @@ inoremap <C-j> <esc>:m .+1<CR>==
 inoremap <C-k> <esc>:m .-2<CR>==
 nnoremap <C-j>j :m .+1<CR>==
 nnoremap <C-k>k :m .-2<CR>==
+
+nnoremap <leader>/ mz0i// <esc>`zlll
+
