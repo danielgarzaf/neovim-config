@@ -49,14 +49,14 @@ function! VAutoComment(start, end)
 
     let g:uncommented_idxs = GetUncommentedLineNumbers(g:lines, a:start, l:comment)
 
-    execute "normal! ".a:start."G"
-    " If there are any lines uncommented in the range, comment them out
-    if len(g:uncommented_idxs) > 0
+    " If all the lines are uncommented, comment them
+    if len(g:uncommented_idxs) == len(g:lines)
+        execute "normal! ".a:start."G"
         for l:idx in g:uncommented_idxs
             execute "normal! ".l:idx."G0i".l:comment." \<Esc>"
         endfor
-    " If all the lines are uncommented, comment them
-    elseif len(g:uncommented_idxs) == len(g:lines)
+    " If there are any lines uncommented in the range, comment them out
+    elseif len(g:uncommented_idxs) > 0
         for l:line in g:lines
             call Comment(l:comment)
             execute "normal! j"
