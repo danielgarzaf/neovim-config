@@ -4,6 +4,7 @@ source $HOME/.config/nvim/colors/color-scheme.vim
 source $HOME/.config/nvim/keys/mappings.vim
 source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/treesitter/ts.vim
+source $HOME/.config/nvim/scripts/autocomment.vim
 
 lua << EOF
 require'lspconfig'.groovyls.setup{
