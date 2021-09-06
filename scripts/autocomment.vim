@@ -7,29 +7,29 @@ let s:chars = {
             \ }
 
 
-function! IsComment(line, comment)
+function! IsComment(line, comment) abort
     return split(a:line)[0] == a:comment
 endfunction
 
 
-function! IsBlankLine(line)
+function! IsBlankLine(line) abort
     return len(split(a:line)) == 0
 endfunction
 
 
-function! Comment(comment)
+function! Comment(comment) abort
     let l:move_right_amt = repeat("l", len(a:comment)+1)
     execute "normal! 0i".a:comment." \<Esc>"
 endfunction
 
 
-function! Uncomment(comment)
+function! Uncomment(comment) abort
     let l:del_amt = repeat("x", len(a:comment)+1)
     execute "normal! ^".l:del_amt
 endfunction
 
 
-function! GetUncommentedLineNumbers(lines, start, comment) 
+function! GetUncommentedLineNumbers(lines, start, comment) abort 
     let l:idx = 0
     let l:list = []
     while l:idx < len(a:lines)
@@ -43,28 +43,28 @@ function! GetUncommentedLineNumbers(lines, start, comment)
 endfunction
 
 
-function! VAutoComment(start, end)
+function! VAutoComment(start, end) abort
     let l:comment = get(s:chars, &filetype)
-    let g:lines = getline(a:start, a:end)
+    let l:lines = getline(a:start, a:end)
 
-    let g:uncommented_idxs = GetUncommentedLineNumbers(g:lines, a:start, l:comment)
+    let l:uncommented_line_nums = GetUncommentedLineNumbers(l:lines, a:start, l:comment)
 
     " Get in position to start comment/uncomment process
     execute "normal! ".a:start."G"
 
     " If all the lines are uncommented, comment them
-    if len(g:uncommented_idxs) == len(g:lines)
-        for l:line in g:lines
+    if len(l:uncommented_line_nums) == len(l:lines)
+        for l:line in l:lines
             call Comment(l:comment)
             execute "normal! j"
         endfor
     " If there are any lines uncommented in the range, comment them out
-    elseif len(g:uncommented_idxs) > 0
-        for l:idx in g:uncommented_idxs
-            execute "normal! ".l:idx."G0i".l:comment." \<Esc>"
+    elseif len(l:uncommented_line_nums) > 0
+        for l:line_num in l:uncommented_line_nums
+            execute "normal! ".l:line_num."G0i".l:comment." \<Esc>"
         endfor
     else
-        for l:line in g:lines
+        for l:line in l:lines
             call Uncomment(l:comment)
             execute "normal! j"
         endfor
@@ -88,7 +88,7 @@ function! s:n_auto_comment() abort
     endif
 
     let l:move_right_amt = repeat("l", len(l:comment)+1)
-    return "mz^i".l:comment." \<Esc>`z".l:move_right_amt
+    return "mz0i".l:comment." \<Esc>`z".l:move_right_amt
 endfunction
 
 
@@ -103,7 +103,11 @@ function! s:v_auto_comment() abort
     return ":s!^!".l:comment." !\<CR>gv=gv"
 endfunction
 
+function! Test(start, end) abort
+    echom a:start
+    echom a:end
+endfunction
 
 nnoremap <silent><expr><leader>/ <SID>n_auto_comment() 
-vnoremap <leader>/ :<BS><BS><BS><BS><BS>let g:start=line("'<")<CR>:let g:end=line("'>")<CR>:call VAutoComment(g:start, g:end)<CR>gv
+vnoremap <leader>/ :<BS><BS><BS><BS><BS>call VAutoComment(line("'<"), line("'>"))<CR>gv
 
