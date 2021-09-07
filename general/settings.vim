@@ -1,6 +1,6 @@
 syntax enable
 set exrc
-set guicursor=
+set guicursor=a:blinkon100
 set relativenumber
 set nohlsearch
 set hidden
@@ -26,6 +26,6 @@ set cmdheight=2
 set updatetime=50
 set shortmess+=c
 set termguicolors
-set statusline+=%F
+set statusline+=\ %F
 
 au! BufWritePost $MYVIMRC source %

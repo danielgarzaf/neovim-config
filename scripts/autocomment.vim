@@ -1,4 +1,4 @@
-let s:chars = {
+let s:cmt_chars = {
             \ "python" : "#",
             \ "vim" : "\"",
             \ "c" : "//",
@@ -44,7 +44,7 @@ endfunction
 
 
 function! VAutoComment(start, end) abort
-    let l:comment = get(s:chars, &filetype)
+    let l:comment = get(s:cmt_chars, &filetype)
     let l:lines = getline(a:start, a:end)
 
     let l:uncommented_line_nums = GetUncommentedLineNumbers(l:lines, a:start, l:comment)
@@ -73,14 +73,13 @@ endfunction
 
 
 function! s:n_auto_comment() abort
-    let l:comment = get(s:chars, &filetype)
-
+    let l:comment = get(s:cmt_chars, &filetype)
     let l:line = getline('.')
+
     if IsBlankLine(l:line) 
         return ""
     endif
 
-    " Checks if current line is a comment
     if IsComment(l:line, l:comment)
         let l:del_amt = repeat("x", len(l:comment)+1)
         let l:move_left_amt = repeat("h", len(l:comment)+1)
@@ -91,22 +90,6 @@ function! s:n_auto_comment() abort
     return "mz0i".l:comment." \<Esc>`z".l:move_right_amt
 endfunction
 
-
-function! s:v_auto_comment() abort
-    let l:comment = get(s:chars, &filetype)
-    if IsComment(getline('.'), l:comment)
-        let l:del_amt = repeat("x", len(l:comment)+1)
-        let l:move_left_amt = repeat("h", len(l:comment)+1)
-        return ":norm! ^".l:del_amt."\<CR>gv=gv" 
-    endif
-
-    return ":s!^!".l:comment." !\<CR>gv=gv"
-endfunction
-
-function! Test(start, end) abort
-    echom a:start
-    echom a:end
-endfunction
 
 nnoremap <silent><expr><leader>/ <SID>n_auto_comment() 
 vnoremap <leader>/ :<BS><BS><BS><BS><BS>call VAutoComment(line("'<"), line("'>"))<CR>gv
