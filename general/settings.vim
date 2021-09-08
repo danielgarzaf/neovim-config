@@ -14,11 +14,11 @@ set nowrap
 set smartcase
 set noswapfile
 set nobackup
-set undodir=~/.vim/undodir
+set undodir=~/.config/nvim/plugged/undodir
 set undofile
 set incsearch
 set scrolloff=8
-set noshowmode
+set showmode
 set completeopt=menuone,noinsert,noselect
 set colorcolumn=80
 set signcolumn=yes

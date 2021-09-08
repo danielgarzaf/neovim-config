@@ -102,9 +102,6 @@ nmap <leader>ac <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
 nmap <leader>qf <Plug>(coc-fix-current)
 
-" Jump to definition
-nmap <leader>df <Plug>(coc-definition)
-
 " Map function and class text objects
 " NOTE: Requires 'textDocument.documentSymbol' support from the language
 " server.
@@ -134,8 +131,7 @@ xmap <silent> <C-s> <Plug>(coc-range-select)
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
 
-" Add `:Fold` command to fold current buffer.
-command! -nargs=? Fold :call CocAction('fold', <f-args>)
+" Add `:Fold` command to fold current buffer.  command! -nargs=? Fold :call CocAction('fold', <f-args>)
 
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport')

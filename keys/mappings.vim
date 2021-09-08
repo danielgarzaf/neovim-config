@@ -23,12 +23,6 @@ vnoremap > >gv
 nnoremap <TAB> :bnext<CR>
 nnoremap <S-TAB> :bprevious<CR>
 
-" Ctrl+[ instead of Esc
-nnoremap <C-[> <Esc> 
-vnoremap <C-[> <Esc>
-
-nmap <C-1> ^<CR>
-
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gr <Plug>(coc-references)
 nnoremap <C-p> :GFiles<CR>
