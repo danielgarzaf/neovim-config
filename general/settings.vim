@@ -42,3 +42,4 @@ set termguicolors
 set noshowmode
 
 au! BufWritePost $MYVIMRC source %
+au! FileType c,cpp setlocal shiftwidth=2 tabstop=2 softtabstop=2

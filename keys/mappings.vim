@@ -20,9 +20,7 @@ vnoremap < <gv
 vnoremap > >gv
 
 nmap <leader>gd <Plug>(coc-definition)
-nmap <leader>gr Plug>(coc-references)
-nnoremap <C-p> :Telescope git_files<CR>
-nnoremap <leader>t :Telescope find_files<CR>
+nmap <leader>gr <Plug>(coc-references)
 
 " Legendary remaps
 nnoremap Y y$

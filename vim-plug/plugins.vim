@@ -32,10 +32,13 @@ Plug 'rafamadriz/friendly-snippets'
 Plug 'tpope/vim-fugitive'
 
 " Plug 'mxw/vim-jsx'
-" Plug 'chemzqm/vim-jsx-improve'
 " Plug 'maxmellon/vim-jsx-pretty'
 Plug 'chemzqm/vim-jsx-improve'
 
-Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline'
+" Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+Plug 'hoob3rt/lualine.nvim'
+
+Plug 'kyazdani42/nvim-web-devicons'
 
 call plug#end()
