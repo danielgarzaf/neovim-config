@@ -19,7 +19,6 @@ endfunction
 
 function! Comment() abort
     let comment = get(s:cmt_chars, &filetype)
-    let move_right_amt = repeat("l", len(comment)+1)
     execute "normal! 0i".comment." \<Esc>"
 endfunction
 
@@ -99,4 +98,3 @@ endfunction
 
 nnoremap <silent><expr><leader>/ <SID>n_auto_comment() 
 vnoremap <leader>/ :<BS><BS><BS><BS><BS>call VAutoComment(line("'<"), line("'>"))<CR>gv
-

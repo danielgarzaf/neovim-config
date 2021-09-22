@@ -1,0 +1,29 @@
+{
+    "coc.preferences.formatOnSaveFiletypes": [
+        "java",
+        "typescript",
+        "css",
+        "markdown",
+        "javascript",
+        "graphql",
+        "html",
+        "yaml",
+        "json",
+        "python",
+        "c"
+    ],
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/12.0.0/clangd_12.0.0/bin/clangd",
+    "typescript.autoClosingTags": true,
+    "snippets.extends": {
+        "javascript": [
+            "html",
+            "javascriptreact",
+            "jsx"
+        ],
+        "typescript": [
+            "javascript"
+        ]
+    }
+}

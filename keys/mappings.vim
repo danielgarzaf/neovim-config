@@ -19,13 +19,10 @@ nnoremap <leader>rp :resize 100<CR>
 vnoremap < <gv
 vnoremap > >gv
 
-" TAB/Shift+TAB to cycle between text buffers
-nnoremap <TAB> :bnext<CR>
-nnoremap <S-TAB> :bprevious<CR>
-
 nmap <leader>gd <Plug>(coc-definition)
-nmap <leader>gr <Plug>(coc-references)
-nnoremap <C-p> :GFiles<CR>
+nmap <leader>gr Plug>(coc-references)
+nnoremap <C-p> :Telescope git_files<CR>
+nnoremap <leader>t :Telescope find_files<CR>
 
 " Legendary remaps
 nnoremap Y y$
@@ -38,10 +35,9 @@ nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
 
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
-inoremap <C-j> <esc>:m .+1<CR>==
-inoremap <C-k> <esc>:m .-2<CR>==
-nnoremap <C-j>j :m .+1<CR>==
-nnoremap <C-k>k :m .-2<CR>==
 
-nnoremap <leader>/ mz0i// <esc>`zlll
+nnoremap <leader><CR> mzo<Esc>`z
 
+nnoremap <leader>gs :Git status<CR>
+nnoremap <leader>ga :Git add 
+nnoremap <leader>gaa :Git add .<CR>
