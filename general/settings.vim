@@ -11,7 +11,6 @@ set wildignore+=**/android/*
 set wildignore+=**/ios/*
 set wildignore+=**/.git/*
 
-syntax enable
 set exrc
 set guicursor=a:blinkon100
 set relativenumber

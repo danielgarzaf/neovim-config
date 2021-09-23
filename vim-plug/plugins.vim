@@ -1,7 +1,7 @@
 call plug#begin('~/.local/share/nvim/site/autoload')
 
 " LSP Plugs
-Plug 'neovim/nvim-lspconfig'
+" Plug 'neovim/nvim-lspconfig'
 " Plug 'hrsh7th/nvim-compe'
 " Plug 'hrsh7th/vim-vsnip'
 
@@ -15,8 +15,12 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
 
+" Autopairs
 Plug 'jiangmiao/auto-pairs'
-Plug 'gruvbox-community/gruvbox'
+
+" Gruvbox baybeee
+" Plug 'gruvbox-community/gruvbox'
+Plug 'morhetz/gruvbox'
 
 " Coc
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
