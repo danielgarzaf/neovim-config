@@ -12,17 +12,8 @@
         "python",
         "c",
         "vim",
-        "lua",
-        "nvim"
+        "lua"
     ],
-<<<<<<< HEAD
-    "python.linting.enabled": true,
-    "python.linting.pylintEnabled": true,
-    "python.jediEnabled": false,
-    "python.formatting.provider": "black",
-=======
->>>>>>> 691247fb16b00e32a2f91d0f3ea8025d7855e028
-    "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/12.0.1/clangd_12.0.1/bin/clangd",
     "snippets.extends": {
         "javascript": [
             "html",
@@ -38,14 +29,17 @@
             "command": "ccls",
             "filetypes": [
                 "c",
+                "cc",
                 "cpp",
-                "c++"
+                "c++",
+                "objc",
+                "objcpp"
             ],
             "rootPatterns": [
                 ".ccls",
                 "compile_commands.json",
                 ".git/",
-                "hg/"
+                ".hg/"
             ],
             "initializationOptions": {
                 "cache": {
