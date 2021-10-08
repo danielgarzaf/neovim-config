@@ -18,10 +18,6 @@ Plug 'nvim-treesitter/playground'
 " Autopairs
 Plug 'jiangmiao/auto-pairs'
 
-" Gruvbox baybeee
-" Plug 'gruvbox-community/gruvbox'
-Plug 'morhetz/gruvbox'
-
 " Coc
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -44,5 +40,12 @@ Plug 'chemzqm/vim-jsx-improve'
 Plug 'hoob3rt/lualine.nvim'
 
 Plug 'kyazdani42/nvim-web-devicons'
+
+" Gruvbox baybeee
+Plug 'morhetz/gruvbox'
+" Plug 'gruvbox-community/gruvbox'
+
+" PlatformIO
+Plug 'coddingtonbear/neomake-platformio'
 
 call plug#end()

@@ -1,10 +1,10 @@
-let mapleader = " "
+let g:mapleader = " "
 
 " Jump between windows
-nnoremap <leader>j :wincmd j<CR>
-nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>l :wincmd l<CR>
+nnoremap <leader>j :wincmd j<CR>
+nnoremap <leader>k :wincmd k<CR>
 
 " Quick vsplit/split
 nnoremap <leader>vs :vsplit <CR> 
@@ -39,3 +39,5 @@ nnoremap <leader><CR> mzo<Esc>`z
 nnoremap <leader>gs :Git status<CR>
 nnoremap <leader>ga :Git add 
 nnoremap <leader>gaa :Git add .<CR>
+
+nnoremap <C-b> :make<CR>

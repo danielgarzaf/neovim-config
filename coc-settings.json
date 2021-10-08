@@ -26,5 +26,26 @@
         "typescript": [
             "javascript"
         ]
+    },
+    "languageserver": {
+        "ccls": {
+            "command": "ccls",
+            "filetypes": [
+                "c",
+                "cpp",
+                "c++"
+            ],
+            "rootPatterns": [
+                ".ccls",
+                "compile_commands.json",
+                ".git/",
+                "hg/"
+            ],
+            "initializationOptions": {
+                "cache": {
+                    "directory": "/tmp/ccls"
+                }
+            }
+        }
     }
 }
