@@ -26,6 +26,7 @@ set nowrap
 set smartcase
 set noswapfile
 set nobackup
+set nowritebackup
 set undodir=~/.config/nvim/plugged/undodir
 set undofile
 set incsearch
@@ -33,15 +34,18 @@ set scrolloff=8
 set showmode
 set completeopt=menuone,noinsert,noselect
 set colorcolumn=80
-set signcolumn=yes
+set signcolumn=number
 set cmdheight=2
 set updatetime=50
 set shortmess+=c
 set termguicolors
 set noshowmode
 
+set inccommand=split
+
 augroup my_group
     au!
     au BufWritePost $MYVIMRC source %
     au FileType c,cpp setlocal shiftwidth=2 tabstop=2 softtabstop=2
 augroup END
+
