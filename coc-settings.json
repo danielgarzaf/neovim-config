@@ -33,28 +33,21 @@
                 "cc",
                 "cpp",
                 "c++",
-<<<<<<< HEAD
                 "objc",
-                "objcpp"
-=======
+                "objcpp",
                 "h"
->>>>>>> 35c901c... more windows specific configurations
             ],
             "rootPatterns": [
                 ".ccls",
                 ".git/",
-<<<<<<< HEAD
-                ".hg/"
+                ".hg/",
+                "compile_commands.json"
             ],
             "initializationOptions": {
                 "cache": {
                     "directory": "/tmp/ccls"
                 }
             }
-=======
-                "compile_commands.json"
-            ]
->>>>>>> 35c901c... more windows specific configurations
         }
     }
 }

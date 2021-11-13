@@ -15,7 +15,6 @@ Plug 'jiangmiao/auto-pairs'
 " Cock haha
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-
 " Snippets
 Plug 'honza/vim-snippets'
 Plug 'rafamadriz/friendly-snippets'
@@ -36,12 +35,13 @@ Plug 'morhetz/gruvbox'
 " PlatformIO
 Plug 'coddingtonbear/neomake-platformio'
 
-<<<<<<< HEAD:plugins.vim
+" Autocommenting
 Plug 'danielgarzaf/autocomment.nvim'
-=======
+
+" ccls
 Plug 'MaskRay/ccls'
 
+" Python highlighting
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
->>>>>>> 35c901c... more windows specific configurations:vim-plug/plugins.vim
 
 call plug#end()
