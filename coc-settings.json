@@ -2,15 +2,16 @@
     "coc.preferences.formatOnSaveFiletypes": [
         "java",
         "typescript",
+        "html",
         "css",
         "markdown",
         "javascript",
         "graphql",
-        "html",
         "yaml",
         "json",
         "python",
         "c",
+        "cpp",
         "vim",
         "lua"
     ],
@@ -32,13 +33,17 @@
                 "cc",
                 "cpp",
                 "c++",
+<<<<<<< HEAD
                 "objc",
                 "objcpp"
+=======
+                "h"
+>>>>>>> 35c901c... more windows specific configurations
             ],
             "rootPatterns": [
                 ".ccls",
-                "compile_commands.json",
                 ".git/",
+<<<<<<< HEAD
                 ".hg/"
             ],
             "initializationOptions": {
@@ -46,6 +51,10 @@
                     "directory": "/tmp/ccls"
                 }
             }
+=======
+                "compile_commands.json"
+            ]
+>>>>>>> 35c901c... more windows specific configurations
         }
     }
 }

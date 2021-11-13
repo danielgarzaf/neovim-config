@@ -41,6 +41,7 @@ set shortmess+=c
 set termguicolors
 set noshowmode
 
+<<<<<<< HEAD:settings.vim
 set inccommand=split
 
 augroup my_group
@@ -49,3 +50,7 @@ augroup my_group
     au FileType c,cpp setlocal shiftwidth=2 tabstop=2 softtabstop=2
 augroup END
 
+=======
+au BufWritePost $MYVIMRC source %
+au FileType c,cpp setlocal shiftwidth=2 tabstop=2 softtabstop=2
+>>>>>>> 35c901c... more windows specific configurations:general/settings.vim

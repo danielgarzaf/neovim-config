@@ -36,6 +36,12 @@ Plug 'morhetz/gruvbox'
 " PlatformIO
 Plug 'coddingtonbear/neomake-platformio'
 
+<<<<<<< HEAD:plugins.vim
 Plug 'danielgarzaf/autocomment.nvim'
+=======
+Plug 'MaskRay/ccls'
+
+Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+>>>>>>> 35c901c... more windows specific configurations:vim-plug/plugins.vim
 
 call plug#end()

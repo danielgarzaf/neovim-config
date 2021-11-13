@@ -13,7 +13,7 @@ nnoremap <leader>s :split<CR>
 " Resizing windows
 nnoremap <leader>+ :vertical resize +5<CR>
 nnoremap <leader>- :vertical resize -5<CR>
-nnoremap <leader>rp :resize 100<CR>
+" nnoremap <leader>rp :resize 100<CR>
 
 " Better tabbing
 vnoremap < <gv
