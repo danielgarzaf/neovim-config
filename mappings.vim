@@ -42,4 +42,4 @@ nnoremap <leader>gaa :Git add .<CR>
 
 nnoremap <C-b> :make<CR>
 
-nnoremap <leader>pv :Ex<CR>
+nnoremap <leader>pp :Ex<CR>
