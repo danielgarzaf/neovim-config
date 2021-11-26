@@ -1,4 +1,4 @@
-# novim-config
+# neovim-config
 Personal Neovim configurations
 ## Step 1:
 Install Neovim. Make sure it's 0.4.4 or higher.
