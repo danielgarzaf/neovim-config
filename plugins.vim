@@ -4,6 +4,7 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', {'do': 'make'}
+Plug 'fannheyward/telescope-coc.nvim'
 
 " Treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -37,5 +38,6 @@ Plug 'morhetz/gruvbox'
 Plug 'coddingtonbear/neomake-platformio'
 
 Plug 'danielgarzaf/autocomment.nvim'
+
 
 call plug#end()
