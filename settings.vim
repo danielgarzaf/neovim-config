@@ -43,9 +43,6 @@ set noshowmode
 
 set inccommand=split
 
-augroup my_group
-    au!
-    au BufWritePost $MYVIMRC source %
-    au FileType c,cpp setlocal shiftwidth=2 tabstop=2 softtabstop=2
-augroup END
+au BufWritePost $MYVIMRC source %
+au FileType c,cpp setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
