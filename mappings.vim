@@ -43,3 +43,6 @@ nnoremap <leader>gaa :Git add .<CR>
 nnoremap <C-b> :make<CR>
 
 nnoremap <leader>pp :Ex<CR>
+
+" Open file explorer on current directory
+nnoremap <leader>x :!explorer .<CR><CR>
