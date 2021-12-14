@@ -43,6 +43,7 @@ set noshowmode
 
 set inccommand=split
 
+" Autocommands
 au BufWritePost $MYVIMRC source %
 au FileType c,cpp setlocal shiftwidth=2 tabstop=2 softtabstop=2
-
+au Filetype php let b:AutoPairs = AutoPairsDefine({'<?' : '?>', '<?php': '?>'})
