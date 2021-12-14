@@ -1,4 +1,6 @@
 set path+=**
+set rtp+=~/.fzf
+
 " set wildmode=longest,list,full
 set wildmenu
 
