@@ -16,7 +16,6 @@ Plug 'jiangmiao/auto-pairs'
 " Cock haha
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-
 " Snippets
 Plug 'honza/vim-snippets'
 Plug 'rafamadriz/friendly-snippets'
@@ -38,6 +37,4 @@ Plug 'morhetz/gruvbox'
 Plug 'coddingtonbear/neomake-platformio'
 
 Plug 'danielgarzaf/autocomment.nvim'
-
-
 call plug#end()

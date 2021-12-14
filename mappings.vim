@@ -43,3 +43,12 @@ nnoremap <leader>gaa :Git add .<CR>
 nnoremap <C-b> :make<CR>
 
 nnoremap <leader>pv :Ex<CR>
+nmap <C-p> ;g
+
+" Telescope
+nnoremap <silent> ;g :Telescope git_files<CR>
+nnoremap <silent> ;f :Telescope find_files<CR>
+nnoremap <silent> ;r :Telescope live_grep<CR>
+nnoremap <silent> \\ :Telescope buffers<CR>
+nnoremap <silent> ;; :Telescope help_tags<CR>
+nnoremap <silent> ;o :Telescope coc document_symbols<CR>
