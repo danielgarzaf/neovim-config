@@ -47,3 +47,16 @@ set inccommand=split
 au BufWritePost $MYVIMRC source %
 au FileType c,cpp setlocal shiftwidth=2 tabstop=2 softtabstop=2
 au Filetype php let b:AutoPairs = AutoPairsDefine({'<?' : '?>', '<?php': '?>'})
+
+let g:clipboard= {
+    \ 'name': 'win32yank',
+    \ 'copy': {
+        \ '+': 'win32yank.exe -i --crlf',
+        \ '*': 'win32yank.exe -i --crlf'
+        \ },
+    \ 'paste': {
+        \ '+': 'win32yank.exe -o --lf',
+        \ '*': 'win32yank.exe -o --lf'
+        \ },
+    \ 'cache_enabled': 0
+    \ }

@@ -39,6 +39,9 @@ Plug 'coddingtonbear/neomake-platformio'
 " Autocommenting
 Plug 'danielgarzaf/autocomment.nvim'
 
+" Visual Studio
+Plug 'danielgarzaf/vs_build.vim'
+
 " ccls
 Plug 'MaskRay/ccls'
 

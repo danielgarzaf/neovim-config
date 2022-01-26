@@ -22,6 +22,9 @@ vnoremap > >gv
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gr <Plug>(coc-references)
 
+" Windows clipboard
+vnoremap <C-c> "*y
+
 " Legendary remaps
 nnoremap Y y$
 nnoremap n nzzzv
@@ -40,7 +43,9 @@ nnoremap <leader>gs :Git status<CR>
 nnoremap <leader>ga :Git add 
 nnoremap <leader>gaa :Git add .<CR>
 
-nnoremap <C-b> :make<CR>
+" Visual Studio
+nnoremap <C-b> :VSBuild<CR>
+nnoremap <F5> :VSRun<CR>
 
 nnoremap <leader>pv :Ex<CR>
 nmap <C-p> ;g
