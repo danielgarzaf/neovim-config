@@ -12,7 +12,9 @@
         "python",
         "c",
         "vim",
-        "lua"
+        "lua",
+        "tsx",
+        "ts"
     ],
     "snippets.extends": {
         "javascript": [
