@@ -1,4 +1,4 @@
-let g:coc_global_extensions = ['coc-json', 'coc-snippets', 'coc-tsserver', 'coc-vimlsp', 'coc-sumneko-lua']
+let g:coc_global_extensions = ['coc-json', 'coc-snippets', 'coc-tsserver', 'coc-vimlsp', 'coc-lua']
 
 
 
