@@ -18,6 +18,7 @@ nnoremap <leader>rp :resize 100<CR>
 " Better tabbing
 vnoremap < <gv
 vnoremap > >gv
+vnoremap <C-y> "*y
 
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gr <Plug>(coc-references)
