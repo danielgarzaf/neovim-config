@@ -1,20 +1,25 @@
+let $CONFIG = $HOME."/.config/nvim"
+if has('win32')
+    let $CONFIG = substitute($LOCALAPPDATA."/nvim", "\\", "/", "g")
+endif
+
 " General settings
-source $HOME/.config/nvim/settings.vim
+source $CONFIG/settings.vim
 
 " Plugs
-source $HOME/.config/nvim/plugins.vim
+source $CONFIG/plugins.vim
 
 " Keys and mappings
-source $HOME/.config/nvim/mappings.vim
+source $CONFIG/mappings.vim
 
 " Plug config
-source $HOME/.config/nvim/plug-config/lspconfig.lua
-source $HOME/.config/nvim/plug-config/cmp.lua
-source $HOME/.config/nvim/plug-config/lualine.lua
-source $HOME/.config/nvim/plug-config/treesitter.vim
-source $HOME/.config/nvim/plug-config/telescope.lua
-source $HOME/.config/nvim/plug-config/web-devicons.vim
+source $CONFIG/plug-config/lspconfig.lua
+source $CONFIG/plug-config/cmp.lua
+source $CONFIG/plug-config/lualine.lua
+source $CONFIG/plug-config/treesitter.lua
+source $CONFIG/plug-config/telescope.lua
+source $CONFIG/plug-config/web-devicons.lua
 
 " Colors
-source $HOME/.config/nvim/color-scheme.vim
+source $CONFIG/color-scheme.lua
 

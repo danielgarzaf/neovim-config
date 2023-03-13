@@ -37,8 +37,8 @@ Plug 'kyazdani42/nvim-web-devicons'
 " Status line
 Plug 'hoob3rt/lualine.nvim'
 
-" Gruvbox baybee
-Plug 'morhetz/gruvbox'
+" Color scheme
+Plug 'folke/tokyonight.nvim'
 
 " PlatformIO
 Plug 'coddingtonbear/neomake-platformio'

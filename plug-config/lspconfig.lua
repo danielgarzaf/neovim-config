@@ -1,5 +1,5 @@
 -- Setup lspconfig.
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local function on_attach()
     vim.keymap.set("n", "K", vim.lsp.buf.hover, {buffer = 0})
@@ -46,7 +46,10 @@ require'lspconfig'.rust_analyzer.setup{
 }
 
 -- Lua
-require'lspconfig'.sumneko_lua.setup {
+require'lspconfig'.lua_ls.setup {
     capabilities = capabilities,
     on_attach = on_attach,
 }
+
+-- Visual configurations
+require('lspconfig.ui.windows').default_options.border = 'single'
