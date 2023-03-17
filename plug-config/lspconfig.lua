@@ -51,5 +51,11 @@ require'lspconfig'.lua_ls.setup {
     on_attach = on_attach,
 }
 
+-- Python
+require'lspconfig'.pyright.setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+}
+
 -- Visual configurations
 require('lspconfig.ui.windows').default_options.border = 'single'
