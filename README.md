@@ -1,20 +1,22 @@
 # neovim-config
 Personal Neovim configurations
 ## Step 1:
-Install Neovim. Make sure it's 0.6.0 or higher.
+Install Neovim. Make sure it's 0.8.0 or higher.
 Check [Building-Neovim](https://github.com/neovim/neovim/wiki/Building-Neovim) 
 if you want the most recent version of Neovim (pay close attention to the 
 prerequesites and installation process according to your platform)
 
 
->NOTE: I recommend using Chocolatey for installing neovim on Windows. Run this command in powershell
+>NOTE: I recommend using scoop for installing most dependencies on Windows. Run this from powershell
 >```ps1
->Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+>Set-ExecutionPolicy RemoteSigned -Scope CurrentUser # Optional: Needed to run a remote script the first time
+>irm get.scoop.sh | iex
 >```
->Restart powershell, and run this
+>Restart powershell and run this
 >```ps1
->choco install neovim
+>scoop install neovim nodejs # NodeJS is used by some plugins. There are more packages you're going to need for some plugins (WIP)
 >```
+
 
 ## Step 2:
 Go to [Node Installation](https://github.com/nodesource/distributions/blob/master/README.md#debinstall) 
