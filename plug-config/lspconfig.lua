@@ -19,6 +19,7 @@ end
 require'lspconfig'.clangd.setup{
     capabilities = capabilities,
     on_attach = on_attach,
+    filetypes = {'ce', 'he', 'c', 'cpp', 'h', 'hpp'},
 }
 
 -- Vimscript

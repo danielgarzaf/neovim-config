@@ -20,9 +20,6 @@ vnoremap < <gv
 vnoremap > >gv
 vnoremap <C-c> "*y
 
-nmap <leader>gd <Plug>(coc-definition)
-nmap <leader>gr <Plug>(coc-references)
-
 " Legendary remaps
 nnoremap Y y$
 nnoremap n nzzzv
@@ -40,8 +37,6 @@ nnoremap <leader><CR> mzo<Esc>`z
 nnoremap <leader>gs :Git status<CR>
 nnoremap <leader>ga :Git add 
 nnoremap <leader>gaa :Git add .<CR>
-
-nnoremap <C-b> :make<CR>
 
 nnoremap <leader>pv :Ex<CR>
 

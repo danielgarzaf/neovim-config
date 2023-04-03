@@ -46,3 +46,7 @@ set noshowmode
 set inccommand=split
 
 let $LANG = 'en'
+
+augroup filetypedetect
+    au! BufRead,BufNewFile *.h,*.he,*.ce         setfiletype c
+augroup END
