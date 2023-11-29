@@ -3,7 +3,7 @@ call plug#begin('~/.local/share/nvim/site/autoload')
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-telescope/telescope-fzf-native.nvim', {'do': 'make'}
+Plug 'nvim-telescope/telescope-fzf-native.nvim'
 
 " LSP
 Plug 'neovim/nvim-lspconfig'
@@ -19,9 +19,6 @@ Plug 'saadparwaiz1/cmp_luasnip'
 " Treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
-
-" Autopairs
-Plug 'jiangmiao/auto-pairs'
 
 " Snippets
 Plug 'honza/vim-snippets'
@@ -46,5 +43,7 @@ Plug 'coddingtonbear/neomake-platformio'
 Plug 'danielgarzaf/autocomment.nvim'
 
 Plug 'tpope/vim-classpath'
+
+Plug 'psf/black', { 'branch': 'stable' }
 
 call plug#end()

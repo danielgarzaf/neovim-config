@@ -41,8 +41,8 @@ nnoremap <leader>gaa :Git add .<CR>
 nnoremap <leader>pv :Ex<CR>
 
 " Telescope
-nnoremap <silent> ;g :Telescope git_files<CR>
-nnoremap <silent> ;f :Telescope find_files<CR>
-nnoremap <silent> ;r :Telescope live_grep<CR>
+nnoremap <silent> <leader>g :Telescope git_files<CR>
+nnoremap <silent> <leader>f :Telescope find_files<CR>
+nnoremap <silent> <leader>r :Telescope live_grep<CR>
 nnoremap <silent> \\ :Telescope buffers<CR>
-nnoremap <silent> ;; :Telescope help_tags<CR>
+nnoremap <silent> <leader><leader> :Telescope help_tags<CR>

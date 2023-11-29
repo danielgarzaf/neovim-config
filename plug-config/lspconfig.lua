@@ -11,7 +11,7 @@ local function on_attach()
     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {buffer = 0})
     vim.keymap.set("n", "<leader>ac", vim.lsp.buf.code_action, {buffer = 0})
     vim.keymap.set("n", "gl", "<cmd>Telescope diagnostics<cr>", {buffer = 0})
-    vim.keymap.set("n", "<leader>ac", "<cmd>Telescope lsp_references", {buffer = 0})
+    vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references", {buffer = 0})
 
 end
 
