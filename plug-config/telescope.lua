@@ -13,6 +13,7 @@ require('telescope').setup {
             i = {
                 ["<C-x>"] = false,
                 ["<C-q>"] = actions.send_to_qflist,
+                ["<C-s>"] = actions.file_vsplit,
             },
             n = {
                 ["q"] = actions.close

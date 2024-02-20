@@ -2,6 +2,7 @@ let $CONFIG = $HOME."/.config/nvim"
 if has('win32')
     let $CONFIG = substitute($LOCALAPPDATA."/nvim", "\\", "/", "g")
 endif
+let $PLUGINS = '~/.local/share/nvim/site/autoload'
 
 " General settings
 source $CONFIG/settings.vim

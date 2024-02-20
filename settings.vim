@@ -12,6 +12,10 @@ set wildignore+=**/node_modules/*
 set wildignore+=**/android/*
 set wildignore+=**/ios/*
 set wildignore+=**/.git/*
+set wildignore+=**.exe
+set wildignore+=**.hex
+set wildignore+=**.cfg
+set wildignore+=**.elf
 
 set exrc
 set guicursor=a:blinkon100
@@ -48,5 +52,12 @@ set inccommand=split
 let $LANG = 'en'
 
 augroup filetypedetect
-    au! BufRead,BufNewFile *.h,*.he,*.ce         setfiletype c
+    au! BufRead,BufNewFile *.h,*.he,*.ce,*.c setfiletype c
+    au! BufRead,BufNewFile Jenkinsfile setfiletype groovy
+    au! FileType c setlocal shiftwidth=3 tabstop=3
+augroup END
+
+augroup format_on_save
+     au! BufWrite *.py :Black
+     au! BufWrite *.rs :RustFmt
 augroup END
