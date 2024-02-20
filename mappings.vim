@@ -86,7 +86,12 @@ function! TermFocus() abort
     endif
 endfunction
 
-function! OpenTerm() abort
+function! TermToggle() abort
+    let s:term = "sh"
+    if has('win32')
+        let s:term = "powershell"
+    endif
+
     if TermOpened()
         if TermFocused()
             execute "quit"
@@ -106,15 +111,15 @@ function! OpenTerm() abort
             let g:termwinnr = luaeval("vim.api.nvim_get_current_win()")
         else
             unlet s:currterm
-            call OpenTerm()
+            call TermToggle()
         endif
     else
-        execute "term powershell"
+        execute "term ".s:term
         let s:currterm = bufname()
         let g:termwinnr = luaeval("vim.api.nvim_get_current_win()")
     endif
 endfunction
 
-command! OpenTerm call OpenTerm()
-nnoremap <silent> <leader>' :OpenTerm<CR>
+command! TermToggle call TermToggle()
+nnoremap <silent> <leader>' :TermToggle<CR>
 tnoremap <silent> <C-[> <C-\><C-N>
