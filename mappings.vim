@@ -13,7 +13,7 @@ nnoremap <leader>s :split<CR>
 " Resizing windows
 nnoremap <leader>+ :vertical resize +5<CR>
 nnoremap <leader>- :vertical resize -5<CR>
-nnoremap <leader>rp :resize 100<CR>
+
 
 " Better tabbing
 vnoremap < <gv
@@ -41,8 +41,80 @@ nnoremap <leader>gaa :Git add .<CR>
 nnoremap <leader>pv :Ex<CR>
 
 " Telescope
-nnoremap <silent> ;g :Telescope git_files<CR>
-nnoremap <silent> ;f :Telescope find_files<CR>
-nnoremap <silent> ;r :Telescope live_grep<CR>
+nnoremap <silent> <leader>g :Telescope git_files<CR>
+nnoremap <silent> <leader>f :Telescope find_files<CR>
+nnoremap <silent> <leader>rr :Telescope live_grep<CR>
 nnoremap <silent> \\ :Telescope buffers<CR>
-nnoremap <silent> ;; :Telescope help_tags<CR>
+nnoremap <silent> <leader><leader> :Telescope help_tags<CR>
+
+
+function! SwitchSlash(start, end, range) abort
+    let lines = getline(a:start, a:end)
+    for i in range(len(lines))
+        if stridx(lines[i], "\\") >= 0
+            call setline(a:start + i, substitute(lines[i], "\\\\", "/", "g"))
+        else
+            call setline(a:start + i, substitute(lines[i], "/", "\\\\", "g"))
+        endif
+    endfor
+endfunction
+command! -range SwitchSlash call SwitchSlash(<line1>, <line2>, <range>)
+vnoremap <silent><leader>z :SwitchSlash<CR>gv
+
+
+" Terminal
+
+function! TermOpened() abort
+    if exists('s:currterm')
+        return bufwinnr(s:currterm) != -1
+    endif
+    return 0
+endfunction
+
+function! TermFocused() abort
+    if exists('g:termwinnr')
+        let currwin = luaeval("vim.api.nvim_get_current_win()")
+        return g:termwinnr == currwin
+    endif
+    return 0
+endfunction
+
+
+function! TermFocus() abort
+    if TermOpened()
+        lua vim.api.nvim_set_current_win(vim.g.termwinnr)
+    endif
+endfunction
+
+function! OpenTerm() abort
+    if TermOpened()
+        if TermFocused()
+            execute "quit"
+        else
+            call TermFocus()
+        endif
+        return
+    endif
+
+    execute "split"
+    execute "wincmd j"
+    execute "resize -8"
+    if exists('s:currterm')
+        echo "Opening buffer: ". s:currterm
+        if bufexists(s:currterm)
+            execute "edit " . s:currterm
+            let g:termwinnr = luaeval("vim.api.nvim_get_current_win()")
+        else
+            unlet s:currterm
+            call OpenTerm()
+        endif
+    else
+        execute "term powershell"
+        let s:currterm = bufname()
+        let g:termwinnr = luaeval("vim.api.nvim_get_current_win()")
+    endif
+endfunction
+
+command! OpenTerm call OpenTerm()
+nnoremap <silent> <leader>' :OpenTerm<CR>
+tnoremap <silent> <C-[> <C-\><C-N>
