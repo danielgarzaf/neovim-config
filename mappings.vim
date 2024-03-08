@@ -101,7 +101,7 @@ function! TermToggle() abort
         return
     endif
 
-    execute "split"
+    execute "botright split"
     execute "wincmd j"
     execute "resize -8"
     if exists('s:currterm')
