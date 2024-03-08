@@ -87,7 +87,7 @@ function! TermFocus() abort
 endfunction
 
 function! TermToggle() abort
-    let s:term = "sh"
+    let s:term = "zsh"
     if has('win32')
         let s:term = "powershell"
     endif
