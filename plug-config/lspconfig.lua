@@ -59,5 +59,17 @@ require'lspconfig'.pyright.setup {
     on_attach = on_attach,
 }
 
+-- Typescript/Javascript
+require'lspconfig'.tsserver.setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    filetypes = {
+        "javascript",
+        "typescript",
+        "vue",
+    },
+}
+
+
 -- Visual configurations
 require('lspconfig.ui.windows').default_options.border = 'single'

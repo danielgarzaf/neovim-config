@@ -68,7 +68,7 @@ command! ClangFormat call ClangFormat()
 augroup filetypedetect
     au! BufRead,BufNewFile *.h,*.he,*.ce,*.c setfiletype c
     au! BufRead,BufNewFile Jenkinsfile setfiletype groovy
-    au! FileType c setlocal shiftwidth=4 tabstop=4
+    au! FileType c,rnc setlocal shiftwidth=3 tabstop=3
 augroup END
 
 augroup format_on_save

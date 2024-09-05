@@ -46,4 +46,7 @@ Plug 'danielgarzaf/autocomment.nvim'
 Plug 'tpope/vim-classpath'
 Plug 'psf/black', { 'branch': 'stable' }
 
+" Rust
+Plug 'rust-lang/rust.vim'
+
 call plug#end()
