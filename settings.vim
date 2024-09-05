@@ -46,18 +46,33 @@ set updatetime=50
 set shortmess+=c
 set termguicolors
 set noshowmode
+set autoread
 
 set inccommand=split
 
 let $LANG = 'en'
 
+function! ClangFormat()
+    let file = getreg("%")
+    silent! execute "!clang-format -i ".file
+    checktime
+endfunction
+
+function! ClangFormatAll(dir)
+    let filetype = &ft
+    execute "!clang-format -i ".a:dir."/*.".filetype
+endfunction
+
+command! ClangFormat call ClangFormat()
+
 augroup filetypedetect
     au! BufRead,BufNewFile *.h,*.he,*.ce,*.c setfiletype c
     au! BufRead,BufNewFile Jenkinsfile setfiletype groovy
-    au! FileType c setlocal shiftwidth=3 tabstop=3
+    au! FileType c setlocal shiftwidth=4 tabstop=4
 augroup END
 
 augroup format_on_save
-     au! BufWrite *.py :Black
-     au! BufWrite *.rs :RustFmt
+     au! BufWritePre *.py :Black
+     au! BufWritePre *.rs :RustFmt
+     au! BufWritePost *.h,*.he,*.ce,*.c :ClangFormat
 augroup END
