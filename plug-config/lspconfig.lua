@@ -60,7 +60,7 @@ require'lspconfig'.pyright.setup {
 }
 
 -- Typescript/Javascript
-require'lspconfig'.tsserver.setup {
+require'lspconfig'.ts_ls.setup {
     capabilities = capabilities,
     on_attach = on_attach,
     filetypes = {
@@ -70,6 +70,18 @@ require'lspconfig'.tsserver.setup {
     },
 }
 
+-- Django
+require'lspconfig'.djlsp.setup{
+    cmd = {"django-template-lsp.exe"},
+    capabilities = capabilities,
+    on_attach = on_attach,
+    filetypes = {
+        "html",
+        "htmldjango",
+    },
+}
 
 -- Visual configurations
 require('lspconfig.ui.windows').default_options.border = 'single'
+
+
