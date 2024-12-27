@@ -1,4 +1,4 @@
-plugged/undodir/**
+undodir/
 .netrwhist
 *.sh
 *.json

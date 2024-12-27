@@ -24,7 +24,7 @@ local function source_file(dir, file)
 end
 
 -- General settings
-source_file(CONFIG, "settings.vim")
+require("config.settings")
 
 -- Keys and mappings
 source_file(CONFIG, "mappings.vim")
