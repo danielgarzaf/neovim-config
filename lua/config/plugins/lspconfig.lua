@@ -56,7 +56,7 @@ local function setup_all_lsps()
         settings = {
             Lua = {
                 diagnostics = {
-                    globals = { "vim", "require", "os", "io" }
+                    globals = { "require", "os", "io" }
                 }
             }
         }
@@ -99,6 +99,19 @@ return {
     -- LSP
     {
         "neovim/nvim-lspconfig",
+        dependencies = {
+            {
+                "folke/lazydev.nvim",
+                ft = "lua", -- only load on lua files
+                opts = {
+                    library = {
+                        -- See the configuration section for more details.
+                        -- Load luvit types when the 'vim.uv' word if found
+                        { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+                    }
+                }
+            }
+        },
         config = setup_all_lsps
     },
 }
