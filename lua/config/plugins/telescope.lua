@@ -3,7 +3,7 @@ local function setup_telescope()
     require('telescope').setup {
         defaults = {
             file_sorter = require('telescope.sorters').get_fzy_sorter,
-            prompt_prefix = '>',
+            prompt_prefix = '> ',
             color_devicons = true,
 
             file_previewer = require('telescope.previewers').vim_buffer_cat.new,
@@ -22,17 +22,22 @@ local function setup_telescope()
             }
         }
     }
+
+    vim.keymap.set("n", "<leader>e", function()
+        local opts = require("telescope.themes").get_ivy({
+            cwd = vim.fn.stdpath("config")
+        })
+        require("telescope.builtin").find_files(opts)
+    end)
 end
 
 return {
-    -- Telescope
-    { "nvim-lua/popup.nvim" },
-    { "nvim-lua/plenary.nvim" },
     {
         "nvim-telescope/telescope.nvim",
         dependencies = {
-            "nvim-telescope/telescope-fzf-native.nvim",
-            build = "make",
+            "nvim-lua/popup.nvim",
+            "nvim-lua/plenary.nvim",
+            { "nvim-telescope/telescope-fzf-native.nvim", build = "make", }
         },
         config = setup_telescope
     },
