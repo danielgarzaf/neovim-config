@@ -39,7 +39,7 @@ set.incsearch = true
 set.showmode = true
 
 set.guicursor = "a:blinkon100"
-set.undodir = CONFIG .. "undodir"
+set.undodir = CONFIG .. "/undodir"
 set.completeopt = { "menuone", "noinsert", "noselect" }
 set.signcolumn = "number"
 set.inccommand = "split"
