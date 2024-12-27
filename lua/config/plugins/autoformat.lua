@@ -1,5 +1,5 @@
 return {
-    -- Python 
+    -- Python
     { 'psf/black' },
 
     -- Rust

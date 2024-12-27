@@ -37,4 +37,3 @@ return {
         config = setup_telescope
     },
 }
-

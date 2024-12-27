@@ -39,14 +39,14 @@ set.incsearch = true
 set.showmode = true
 
 set.guicursor = "a:blinkon100"
-set.undodir = CONFIG.."undodir"
-set.completeopt = {"menuone","noinsert","noselect"}
+set.undodir = CONFIG .. "undodir"
+set.completeopt = { "menuone", "noinsert", "noselect" }
 set.signcolumn = "number"
 set.inccommand = "split"
 
 set.tabstop = 4
 set.softtabstop = 4
-set.shiftwidth=4
+set.shiftwidth = 4
 set.scrolloff = 8
 set.cmdheight = 2
 set.updatetime = 50

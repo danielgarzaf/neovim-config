@@ -47,7 +47,7 @@ return {
     { 'hrsh7th/cmp-buffer' },
     { 'hrsh7th/cmp-path' },
     {
-        'hrsh7th/nvim-cmp' ,
+        'hrsh7th/nvim-cmp',
         config = setup_cmp
     },
     { 'L3MON4D3/LuaSnip' },

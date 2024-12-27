@@ -15,7 +15,7 @@ end
 
 CONFIG = os.getenv("HOME") .. "/.config/nvim/"
 if get_os() == "Windows" then
-    CONFIG = os.getenv("LOCALAPPDATA").."/nvim/"
+    CONFIG = os.getenv("LOCALAPPDATA") .. "/nvim/"
     CONFIG = CONFIG:gsub("\\", "/")
 end
 
