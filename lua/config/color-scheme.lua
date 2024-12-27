@@ -24,9 +24,11 @@ vim.lsp.handlers["textDocument/signatureHelp"] =
   }
 )
 
-vim.diagnostic.config {     
-    float = { border = "rounded" }, 
+vim.diagnostic.config {
+    float = { border = "rounded" },
 }
 
-vim.cmd([[colorscheme tokyonight-night]])
+vim.cmd.colorscheme "tokyonight-night"
 vim.cmd([[hi Normal ctermbg=none guibg=none]])
+vim.g.tokyonight_night_float = false
+
