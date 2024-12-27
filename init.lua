@@ -13,10 +13,10 @@ local function get_os()
     return os or "Windows"
 end
 
-local config = os.getenv("HOME") .. "/.config/nvim/"
+CONFIG = os.getenv("HOME") .. "/.config/nvim/"
 if get_os() == "Windows" then
-    config = os.getenv("LOCALAPPDATA").."/nvim/"
-    config = g:gsub("\\", "/")
+    CONFIG = os.getenv("LOCALAPPDATA").."/nvim/"
+    CONFIG = CONFIG:gsub("\\", "/")
 end
 
 local function source_file(dir, file)
@@ -24,22 +24,10 @@ local function source_file(dir, file)
 end
 
 -- General settings
-source_file(config, "settings.vim")
-
--- Plugs
-source_file(config, "plugins.vim")
+source_file(CONFIG, "settings.vim")
 
 -- Keys and mappings
-source_file(config, "mappings.vim")
+source_file(CONFIG, "mappings.vim")
 
 -- Lazy (Package Manager)
 require("config.lazy")
-
--- Plugin configs
-require("config.cmp")
-require("config.lspconfig")
-require("config.lualine")
-require("config.treesitter")
-require("config.telescope")
-require("config.web-devicons")
-require("config.color-scheme")

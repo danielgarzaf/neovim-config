@@ -63,16 +63,17 @@ function! ClangFormatAll(dir)
     execute "!clang-format -i ".a:dir."/*.".filetype
 endfunction
 
-command! ClangFormat call ClangFormat()
+" command! ClangFormat call ClangFormat()
 
 augroup filetypedetect
     au! BufRead,BufNewFile *.h,*.he,*.ce,*.c setfiletype c
     au! BufRead,BufNewFile Jenkinsfile setfiletype groovy
+    au! BufRead,BufNewFile *.html setfiletype htmldjango
     au! FileType c,rnc setlocal shiftwidth=3 tabstop=3
 augroup END
 
 augroup format_on_save
      au! BufWritePre *.py :Black
      au! BufWritePre *.rs :RustFmt
-     au! BufWritePost *.h,*.he,*.ce,*.c :ClangFormat
+     " au! BufWritePost *.h,*.he,*.ce,*.c :ClangFormat
 augroup END
