@@ -3,7 +3,6 @@ local function setup_telescope()
     require('telescope').setup {
         defaults = {
             file_sorter = require('telescope.sorters').get_fzy_sorter,
-            prompt_prefix = '> ',
             color_devicons = true,
 
             file_previewer = require('telescope.previewers').vim_buffer_cat.new,
@@ -20,8 +19,14 @@ local function setup_telescope()
                     ["q"] = actions.close
                 },
             }
+        },
+
+        extensions = {
+            fzf = {}
         }
     }
+
+    require("telescope").load_extension("fzf")
 
     vim.keymap.set("n", "<leader>e", function()
         local opts = require("telescope.themes").get_ivy({
@@ -29,6 +34,17 @@ local function setup_telescope()
         })
         require("telescope.builtin").find_files(opts)
     end)
+    vim.keymap.set("n", "<leader>pp", function()
+        require("telescope.builtin").find_files {
+            cwd = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy")
+        }
+    end)
+
+    vim.keymap.set("n", "<leader>g", require("telescope.builtin").git_files)
+    vim.keymap.set("n", "<leader>f", require("telescope.builtin").find_files)
+    vim.keymap.set("n", "\\f", require("telescope.builtin").find_files)
+    vim.keymap.set("n", "\\r", require("telescope.builtin").live_grep)
+    vim.keymap.set("n", "\\\\", require("telescope.builtin").help_tags)
 end
 
 return {

@@ -40,14 +40,6 @@ nnoremap <leader>gaa :Git add .<CR>
 
 nnoremap <leader>pv :Ex<CR>
 
-" Telescope
-nnoremap <silent> <leader>g :Telescope git_files<CR>
-nnoremap <silent> <leader>f :Telescope find_files<CR>
-nnoremap <silent> <leader>rr :Telescope live_grep<CR>
-nnoremap <silent> \\ :Telescope buffers<CR>
-nnoremap <silent> <leader><leader> :Telescope help_tags<CR>
-
-
 function! SwitchSlash(start, end, range) abort
     let lines = getline(a:start, a:end)
     for i in range(len(lines))
