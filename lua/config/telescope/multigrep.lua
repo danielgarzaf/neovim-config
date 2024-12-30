@@ -5,7 +5,7 @@ local conf = require "telescope.config".values
 
 local M = {}
 
-M.setup = function(opts)
+M.find = function(opts)
     opts = opts or {}
     opts.cwd = opts.cwd or vim.uv.cwd()
     M.picker = pickers.new(opts, {
@@ -41,11 +41,7 @@ M.setup = function(opts)
         },
         previewer = conf.grep_previewer(opts),
         sorter = require("telescope.sorters").empty(),
-    })
-end
-
-M.find = function()
-    M.picker:find()
+    }):find()
 end
 
 

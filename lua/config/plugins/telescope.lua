@@ -42,14 +42,10 @@ local function setup_telescope()
         require("telescope.builtin").find_files(opts)
     end)
 
-    -- Custom multigrep (thx TJDevries)
-    local multigrep = require("config.telescope.multigrep")
-    multigrep.setup()
-
     vim.keymap.set("n", "<leader>g", require("telescope.builtin").git_files)
     vim.keymap.set("n", "<leader>f", require("telescope.builtin").find_files)
     vim.keymap.set("n", "\\f", require("telescope.builtin").find_files)
-    vim.keymap.set("n", "\\r", multigrep.find)
+    vim.keymap.set("n", "\\r", require("config.telescope.multigrep").find)
     vim.keymap.set("n", "\\\\", require("telescope.builtin").help_tags)
 
 end
