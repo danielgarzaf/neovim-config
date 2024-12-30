@@ -1,14 +1,9 @@
 CONFIG = vim.fn.stdpath("config"):gsub("\\", "/")
 
--- Lazy (Package Manager)
-require("config.lazy")
-
--- General settings
+require("config.lazy") -- Package manager
 require("config.settings")
+require("config.mappings")
+require("config.autocommands")
 
--- Tab navigation
-vim.keymap.set("n", "<C-h>", require("config.tabs.navigate").move_left)
-vim.keymap.set("n", "<C-l>", require("config.tabs.navigate").move_right)
-
--- Keys and mappings
+-- Legacy mappings
 vim.cmd("source " .. CONFIG .. "/mappings.vim")

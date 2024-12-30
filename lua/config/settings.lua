@@ -50,5 +50,3 @@ set.shiftwidth = 4
 set.scrolloff = 8
 set.cmdheight = 2
 set.updatetime = 50
-
-require("config.autocommands")
