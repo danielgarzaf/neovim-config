@@ -14,6 +14,7 @@ local function setup_telescope()
                     ["<C-x>"] = false,
                     ["<C-q>"] = actions.send_to_qflist,
                     ["<C-s>"] = actions.file_vsplit,
+                    ["<C-l>"] = actions.to_fuzzy_refine,
                 },
                 n = {
                     ["q"] = actions.close
@@ -35,16 +36,22 @@ local function setup_telescope()
         require("telescope.builtin").find_files(opts)
     end)
     vim.keymap.set("n", "<leader>pp", function()
-        require("telescope.builtin").find_files {
+        local opts = require("telescope.themes").get_ivy({
             cwd = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy")
-        }
+        })
+        require("telescope.builtin").find_files(opts)
     end)
+
+    -- Custom multigrep (thx TJDevries)
+    local multigrep = require("config.telescope.multigrep")
+    multigrep.setup()
 
     vim.keymap.set("n", "<leader>g", require("telescope.builtin").git_files)
     vim.keymap.set("n", "<leader>f", require("telescope.builtin").find_files)
     vim.keymap.set("n", "\\f", require("telescope.builtin").find_files)
-    vim.keymap.set("n", "\\r", require("telescope.builtin").live_grep)
+    vim.keymap.set("n", "\\r", multigrep.find)
     vim.keymap.set("n", "\\\\", require("telescope.builtin").help_tags)
+
 end
 
 return {
