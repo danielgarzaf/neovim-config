@@ -14,30 +14,33 @@ nnoremap <leader>s :split<CR>
 nnoremap <leader>+ :vertical resize +5<CR>
 nnoremap <leader>- :vertical resize -5<CR>
 
-
-" Better tabbing
+" Better indentation
 vnoremap < <gv
 vnoremap > >gv
 vnoremap <C-c> "*y
 
-" Legendary remaps
+" Yank rest of line
 nnoremap Y y$
+
+" Center line when doing "/" search
 nnoremap n nzzzv
 nnoremap N Nzzzv
+
+" Join next line into current line
 nnoremap J mzJ`z
 
+" Scroll up/down with 5 lines of space
 nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
 nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
 
+" Move current selection of VISUAL mode (line or regular mode) up/down
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
+" Insert space down from current line without going into insert mode
 nnoremap <leader><CR> mzo<Esc>`z
 
-nnoremap <leader>gs :Git status<CR>
-nnoremap <leader>ga :Git add 
-nnoremap <leader>gaa :Git add .<CR>
-
+" Built in file browser
 nnoremap <leader>pv :Ex<CR>
 
 function! SwitchSlash(start, end, range) abort
