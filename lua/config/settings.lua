@@ -43,6 +43,7 @@ set.undodir = CONFIG .. "/undodir"
 set.completeopt = { "menuone", "noinsert", "noselect" }
 set.signcolumn = "number"
 set.inccommand = "split"
+set.signcolumn = "yes:1"
 
 set.tabstop = 4
 set.softtabstop = 4
