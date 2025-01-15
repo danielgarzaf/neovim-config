@@ -45,7 +45,8 @@ local function setup_telescope()
     vim.keymap.set("n", "<leader>g", require("telescope.builtin").git_files)
     vim.keymap.set("n", "<leader>f", require("telescope.builtin").find_files)
     vim.keymap.set("n", "\\f", require("telescope.builtin").find_files)
-    vim.keymap.set("n", "\\r", require("config.telescope.multigrep").find)
+    vim.keymap.set("n", "\\r", "<cmd>Telescope live_grep<CR>")
+    vim.keymap.set("n", "\\m", require("config.telescope.multigrep").find)
     vim.keymap.set("n", "\\\\", require("telescope.builtin").help_tags)
 
 end
