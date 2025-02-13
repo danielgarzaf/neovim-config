@@ -26,7 +26,7 @@ endfunction
 function! TermToggle() abort
     let s:term = "zsh"
     if has('win32')
-        let s:term = "powershell"
+        let s:term = "pwsh"
     endif
 
     if TermOpened()
