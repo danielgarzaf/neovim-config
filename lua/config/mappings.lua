@@ -1,7 +1,7 @@
 -- Tab controls
 vim.keymap.set("n", "<C-n>", "<cmd>tabnew<CR>")
-vim.keymap.set("n", "<C-h>", require("config.tabs.navigate").move_left)
-vim.keymap.set("n", "<C-l>", require("config.tabs.navigate").move_right)
+vim.keymap.set("n", "<C-h>", "<cmd>tabprev<CR>")
+vim.keymap.set("n", "<C-l>", "<cmd>tabnext<CR>")
 
 -- Quickfix
 vim.keymap.set("n", "<M-o>", "<cmd>botright copen<CR>")
