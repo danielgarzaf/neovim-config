@@ -19,6 +19,10 @@ vnoremap < <gv
 vnoremap > >gv
 vnoremap <C-c> "*y
 
+" Keep line selection on bulk increment/decrement
+vnoremap <C-a> <C-a>gv
+vnoremap <C-x> <C-x>gv
+
 " Yank rest of line
 nnoremap Y y$
 
@@ -42,6 +46,7 @@ nnoremap <leader><CR> mzo<Esc>`z
 
 " Built in file browser
 nnoremap <leader>pv :Ex<CR>
+
 
 function! SwitchSlash(start, end, range) abort
     let lines = getline(a:start, a:end)

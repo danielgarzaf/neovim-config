@@ -18,7 +18,7 @@ local function setup_all_lsps()
 
     -- C / C++
     require("lspconfig").clangd.setup {
-        -- cmd = { "C:\\Program Files\\LLVM-18.1.8\\bin\\clangd.exe" },
+        cmd = { "clangd.exe" },
         capabilities = capabilities,
         on_attach = on_attach,
         filetypes = { "c", "cpp", "h", "hpp" },
