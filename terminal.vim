@@ -68,10 +68,12 @@ endfunction
 command! TermToggle call TermToggle()
 
 nnoremap <silent> <leader>' :TermToggle<CR>
-nnoremap <silent> <leader>' :TermToggle<CR>
+nnoremap <silent> <leader>; :TermToggle<CR>
+nnoremap <silent> <A-2> :TermToggle<CR>
 
-nnoremap <silent> <C-n> :TermToggle<CR>
 inoremap <silent> <C-n> <esc>:TermToggle<CR>
 tnoremap <silent> <C-n> <C-\><C-N>:TermToggle<CR>
+inoremap <silent> <A-2> <esc>:TermToggle<CR>
+tnoremap <silent> <A-2> <C-\><C-N>:TermToggle<CR>
 
 tnoremap <silent> <C-[> <C-\><C-N>
