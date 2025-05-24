@@ -10,6 +10,8 @@ set("nowritebackup")
 set("noshowmode")
 set("colorcolumn=80")
 
+set("rtp+=.")
+
 set = vim.opt
 set.wildignore:append("*.pyc")
 set.wildignore:append("*_build/*")
@@ -23,6 +25,7 @@ set.wildignore:append("**.hex")
 set.wildignore:append("**.cfg")
 set.wildignore:append("**.elf")
 set.shortmess:append("c")
+
 
 set.exrc = true
 set.relativenumber = true
