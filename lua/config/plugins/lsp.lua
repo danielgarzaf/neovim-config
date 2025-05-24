@@ -14,7 +14,6 @@ local function setup_all_lsps()
         vim.keymap.set("n", "gl", "<cmd>Telescope diagnostics<cr>", { buffer = 0 })
         vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references<cr>", { buffer = 0 })
         vim.keymap.set("i", "<C-Space>", vim.lsp.buf.completion, { buffer = 0 })
-
     end
 
     -- C / C++
@@ -91,6 +90,7 @@ local function setup_all_lsps()
     }
 
     -- Visual configurations
+    -- default_capabilities
     require("lspconfig.ui.windows").default_options.border = "single"
 
     vim.api.nvim_create_autocmd("LspAttach", {
@@ -121,7 +121,10 @@ return {
                     library = {
                         -- See the configuration section for more details.
                         -- Load luvit types when the 'vim.uv' word if found
-                        { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+                        { path = "${3rd}/luv/library",     words = { "vim%.uv" } },
+                        { path = "${3rd}/busted/library" },
+                        { path = "${3rd}/luassert/library" },
+                        "nvim-cmp/lua/cmp/types",
                     }
                 }
             }

@@ -1,3 +1,3 @@
 return {
-    { dir = "~/nvim-plugins/vstudio.nvim" }
+    { dir = "~/repos/vstudio.nvim" }
 }

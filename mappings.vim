@@ -1,10 +1,10 @@
 let g:mapleader = " "
 
 " Jump between windows
-nnoremap <leader>h :wincmd h<CR>
-nnoremap <leader>l :wincmd l<CR>
-nnoremap <leader>j :wincmd j<CR>
-nnoremap <leader>k :wincmd k<CR>
+nnoremap <silent><leader>h :wincmd h<CR>
+nnoremap <silent><leader>l :wincmd l<CR>
+nnoremap <silent><leader>j :wincmd j<CR>
+nnoremap <silent><leader>k :wincmd k<CR>
 
 " Quick vsplit/split
 nnoremap <leader>vs :vsplit <CR> 
