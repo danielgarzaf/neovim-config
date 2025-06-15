@@ -61,4 +61,3 @@ endfunction
 command! -range SwitchSlash call SwitchSlash(<line1>, <line2>, <range>)
 vnoremap <silent><leader>z :SwitchSlash<CR>gv
 
-

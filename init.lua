@@ -7,4 +7,3 @@ require("config.autocommands")
 
 -- Legacy mappings
 vim.cmd("source " .. CONFIG .. "/mappings.vim")
-vim.cmd("source " .. CONFIG .. "/terminal.vim")

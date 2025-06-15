@@ -129,11 +129,11 @@ return {
                 ft = "lua", -- only load on lua files
                 opts = {
                     library = {
-                        -- See the configuration section for more details.
                         -- Load luvit types when the 'vim.uv' word if found
                         { path = "${3rd}/luv/library",     words = { "vim%.uv" } },
                         { path = "${3rd}/busted/library" },
                         { path = "${3rd}/luassert/library" },
+                        { path = "${3rd}/plenary/library" },
                         "nvim-cmp/lua/cmp/types",
                     }
                 }
