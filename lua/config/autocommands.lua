@@ -27,6 +27,16 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     end
 })
 
+
+vim.api.nvim_create_autocmd({ "BufWrite" }, {
+    desc = "Autoformat XML files",
+    group = autoformat_xml,
+    pattern = { "*.xml" },
+    callback = function()
+        vim.cmd([[%! xmllint --format -]])
+    end
+})
+
 vim.api.nvim_create_autocmd("TextYankPost", {
     desc = "Highlight when yanking (copying) text",
     group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),

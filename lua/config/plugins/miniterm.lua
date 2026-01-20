@@ -32,13 +32,17 @@ local function config()
         vim.print(terms)
     end, { nargs = "*" })
 
-    -- Mappings
+    -- Easy escape from term mode
     vim.keymap.set("t", "<C-[>", "<C-\\><C-N>")
     vim.keymap.set("t", "<esc>", "<C-\\><C-N>")
 
-    vim.keymap.set("n", "<M-2>", "<esc>:TermToggle<CR>")
-    vim.keymap.set("i", "<M-2>", "<esc>:TermToggle<CR>")
-    vim.keymap.set("t", "<M-2>", "<C-\\><C-N>:TermToggle<CR>")
+    -- ;
+    vim.keymap.set("n", "<space>;", "<esc>:TermToggle<CR>")
+    
+    -- o
+    vim.keymap.set("n", "<D-o>", "<Cmd>TermToggle<CR>")
+    vim.keymap.set("i", "<D-o>", "<Cmd>TermToggle<CR>")
+    vim.keymap.set("t", "<D-o>", "<Cmd>TermToggle<CR>")
 end
 
 
