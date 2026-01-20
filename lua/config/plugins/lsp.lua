@@ -25,6 +25,19 @@ local function setup_all_lsps()
         filetypes = { "c", "cpp", "h", "hpp" },
     }
 
+    require('lspconfig').tinymist.setup {
+        cmd = { vim.fn.expand('$HOME/.local/share/nvim/typst-preview/tinymist-darwin-arm64') },
+        capabilities = capabilities,
+        on_attach = on_attach,
+        -- filetypes = { "typst" },
+        settings = {
+            formatterMode = "typstyle",
+            exportPdf = "onType",
+            semanticTokens = "disable"
+        }
+
+    }
+
     -- Vimscript
     require("lspconfig").vimls.setup {
         capabilities = capabilities,
@@ -81,7 +94,9 @@ local function setup_all_lsps()
             "typescript",
             "vue",
             "tsx",
-            "typescriptreact"
+            "jsx",
+            "typescriptreact",
+            "javascriptreact",
         },
     }
 
